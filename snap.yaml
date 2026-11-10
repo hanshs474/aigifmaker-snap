@@ -1,0 +1,37 @@
+name: aigifmaker
+version: '0.1.1'
+summary: Turn text into animated GIFs with AI GIF Maker (aigifmaker.ai)
+description: |
+  Turn text into animated GIFs with AI GIF Maker. Native GIF generation — no
+  video conversion. Type what you want and download your GIF in about a minute.
+
+  This is the official CLI for AI GIF Maker (https://aigifmaker.ai). Type a
+  prompt and it prints the URL of a real animated GIF.
+
+    export AIGIFMAKER_API_KEY=sk-...
+    aigifmaker "a cat dancing in the rain, pixel art"
+    aigifmaker credits
+
+  Create a key at https://aigifmaker.ai/settings/apikeys. Each GIF costs
+  1 credit on your AI GIF Maker account, the same as on the website. New
+  accounts get one free GIF (it carries a small aigifmaker.ai badge). Failed
+  generations are refunded.
+architectures: [ARCH]
+base: core22
+confinement: strict
+grade: stable
+license: MIT
+title: AI GIF Maker
+links:
+  website:
+    - https://aigifmaker.ai/?utm_source=snapcraft&utm_medium=package
+  source-code:
+    - https://github.com/hanshs474/aigifmaker-go
+  issues:
+    - https://github.com/hanshs474/aigifmaker-go/issues
+  contact:
+    - mailto:support@aigifmaker.ai
+apps:
+  aigifmaker:
+    command: bin/aigifmaker
+    plugs: [network]
